@@ -1,0 +1,168 @@
+
+<!doctype html>
+
+<html>
+<head>
+    <title>Mancala</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="pohledy/css/simple-grid.css" type="text/css"/>
+    <link rel="stylesheet" href="pohledy/css/style.css" type="text/css"/>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="pohledy/css/bootstrap.min.css">
+
+    <script src="js/script.js"></script>
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jquery/jquery-1.4.4.min.js"></script>
+</head>
+<body>
+<div class="grid grid-pad">
+    <div id="top-background">
+        <div class="grid grid-pad toplogin">
+
+            <div class="grid grid-pad hide-on-mobile">
+                <div class="col-1-1">
+                    <div id="loginpanel">
+                        <div class="basement">
+                            <div class="lognick">
+                                <form name="Login" method="post">
+                                    <label for="jmeno" >Nick:</label> <input type="text" size="15" name="jmeno" id="jmeno" class="prihlaseni" placeholder="Nick" pattern="[a-zA-Z0-9]{3,64}" title="Minimum 3 characters, juts alphanumeric">
+                                    <label for="password">&nbsp;&nbsp;|&nbsp;&nbsp;  Password:</label> <input type="password" size="15" name="password" id="password" pattern="^.{6,128}$" title="Minimum 6 and maximum 64 characters"  class="prihlaseni">
+                                    <input type="submit" value="Login" name="prihlasit" class="logtl">
+                                </form>s
+                            </div>
+                        <div id="vdividermenu">
+                            <ul>
+                                <li><a href="#">Sign up</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <!-- 10/12 and 2/12 layout -->
+    <header class="main-header">
+        <div class="grid grid-pad"> <!--style="/* margin-top:54px;*/ padding:0;"-->
+
+            <div class="hlava">
+                <h1><a href="index.html">Mancala<span class="break"></span> <span class="hidePart">KSU</span></a></h1>
+                <h2 class="tagline hide-on-mobile">First homework</h2>
+                <p class="novy hide-on-mobile"><time id="datetime"></time></p>
+            </div>
+
+
+            <div class="col-1-1 nav-mobile">
+                <!--/.navigace-->
+                <nav class="main-nav navbar navbar-default"> <!-- style="margin:0 auto;"-->
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                            <span class="sr-only">Navigace</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                    </div>
+                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                        <ul class="nav navbar-nav">
+                            <li class="dropdown login-mobil show-on-mobil">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Login / Sign up<b class="caret"></b></a>
+                                <ul class="dropdown-menu multi-column columns-2">
+                                    <li>
+                                        <form name="prihlasenieMobil" method="post">
+                                            <label for="jmenoMob" >Nick:</label> <input type="text" size="15" name="jmenoMob" id="jmenoMob" class="prihlaseni" placeholder="Nick" pattern="[a-zA-Z0-9]{3,64}" title="Minimum 3 characters, juts alphanumeric">
+                                            <label for="passwordMob">&nbsp;&nbsp;|&nbsp;&nbsp;  Password:</label> <input type="password" size="15" name="passwordMob" id="passwordMob" pattern="^.{6,128}$" title="Minimum 6 and maximum 64 characters"  class="prihlaseni">
+                                            <input type="submit" value="Log In" name="prihlasitMob" class="logtl">
+                                        </form>
+                                    </li>
+                                    <li>
+                                        <br/>
+                                        <a href="#">Sign up</a>
+                                    </li>
+
+                                </ul>
+                            </li>
+                            <li class="first-menu"><a href="#" class="active">Game</a></li>
+                            <li><a href="#">Score</a></li>
+                            <li><a href="#">About us</a></li>
+                        </ul>
+                        <form name="form-search" class="search navbar-form navbar-right" >
+                            <input type="text" name="search_pole" id="search_pole">
+                            <input type="submit" value="Search">
+                        </form>
+                    </div>
+                </nav>
+                <!--/.navigace-->
+            </div>
+        </div>
+    </header>
+        </div>
+</div>
+<main class="container" id="mainContainer">
+    <div class="scoreBoard">
+        <p class="text" id="info"></p>
+        <p class="align-left">Score One</p>
+        <p class="align-right">Score Two</p>
+    </div>
+    <div class="board">
+        <!--<p class="finScore" id="finOne">Score Player One </p>-->
+        <div id="place0Score" class="finScore"></div>
+        <div class="last" id="place0" ><p></p></div>
+
+
+        <div class="rows">
+            <div class="rowScore">
+                <div class="score" id="place13Score"></div>
+                <div class="score" id="place12Score"></div>
+                <div class="score" id="place11Score"></div>
+                <div class="score" id="place10Score"></div>
+                <div class="score" id="place9Score"></div>
+                <div class="score" id="place8Score"></div>
+            </div>
+            <div class="row" id="0">
+                <div class="place rows" id="place13"></div>
+                <div class="place rows" id="place12"><p></p></div>
+                <div class="place rows" id="place11"><p></p></div>
+                <div class="place rows" id="place10"><p></p></div>
+                <div class="place rows" id="place9"><p></p></div>
+                <div class="place rows" id="place8"><p></p></div>
+            </div>
+
+            <div class="row" id="1">
+                <div class="place rows" id="place1"></div>
+                <div class="place rows" id="place2"><p></p></div>
+                <div class="place rows" id="place3"><p></p></div>
+                <div class="place rows" id="place4"><p></p></div>
+                <div class="place rows" id="place5"><p></p></div>
+                <div class="place rows" id="place6"><p></p></div>
+            </div>
+            <div class="rowScore">
+                <div class="score" id="place1Score"></div>
+                <div class="score" id="place2Score"></div>
+                <div class="score" id="place3Score"></div>
+                <div class="score" id="place4Score"></div>
+                <div class="score" id="place5Score"></div>
+                <div class="score" id="place6Score"></div>
+            </div>
+        </div>
+        <div class="last" id="place7" ><p></p></div>
+        <div id="place7Score" class="finScore"></div>
+        <!--<p class="finScore" id="finTwo">Score Player Two</p>-->
+    </div>
+    <div>
+        <button id="newGame">New Game</button>
+    </div>
+</main>
+<footer class="grid grid-pad col-1-1" id="autor">
+    <div class="col-1-2">
+        <div class="content">
+            <p>KSU Mancala HW</p>
+        </div>
+    </div>
+</footer>
+</div>
+</body>
+
+</html>

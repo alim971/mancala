@@ -1,1 +1,3 @@
-# mancala
+# Mancala HW
+
+author Jozef Bugoš
