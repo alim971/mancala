@@ -74,7 +74,7 @@ window.onload = function() {
             } else
                 addPebble("place" + place);
         }
-        if ((place == 0 && parentId == 0) || (place == 7 && parentId == 1)) {
+        if (((place == 0 && parentId == 0) || (place == 7 && parentId == 1)) && !isEnd()) {
             setInfo("You get another turn!");
             return;
         }
