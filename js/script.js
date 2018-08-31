@@ -112,6 +112,7 @@ window.onload = function() {
     }
 
     function start() {
+        setTurnColorOff(turn);
         clearPlace("place" + 0);
         for (var i = 1; i < 14; i++) {
             if (i == 7) {
@@ -124,6 +125,7 @@ window.onload = function() {
         for (var i = 0; i < places.length; i++)
             places[i].addEventListener("click", onClick);
 
+        turn = 0;
         setTurnColorOn(turn);
         setInfo("It is Player" + turn + " turn!");
     }
